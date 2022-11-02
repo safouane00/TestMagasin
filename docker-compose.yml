@@ -9,4 +9,13 @@ services:
      - MYSQL_ROOT_PASSWORD=root
     volumes: 
      - /home/mysql/data:/var/lib/mysql
+
+  pring_app:
+    image: achatproject
+    container_name: achatproject
+    restart: on-failure
+    ports:
+     - 8095:8095
+    depends_on:
+     - mysqldb
      
