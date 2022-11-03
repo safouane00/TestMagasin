@@ -25,7 +25,7 @@ services:
     image: wassim19/achatfront:1.0
     container_name: achatangular
     ports: 
-      - 80:80
+      - 4200:80
     depends_on:
       - spring-boot
     networks:
