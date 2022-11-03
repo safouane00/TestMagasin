@@ -12,7 +12,7 @@ services:
      - projectdevops
      
   spring-boot:
-    image: achatProject/image:1.0
+    image: achatproject/image:1.0
     container_name: springcontainer
     ports:
       - 8095:8095
