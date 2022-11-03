@@ -22,16 +22,15 @@ services:
       - projectdevops 
     restart: on-failure  
   angular:
-    image: wassim19/achatfront:1.0
-    container_name: achatangular
+    image: dadoulanda/angular
+    container_name: angularcontainer
     ports: 
-      - 4200:80
+      - 80:80
     depends_on:
       - spring-boot
     networks:
       - projectdevops   
  
-  
 networks:
   projectdevops:
      
