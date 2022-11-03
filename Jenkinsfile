@@ -27,7 +27,7 @@ tools
              sh "git branch -a"
              sh "git checkout branchname"*/
            
-              echo 'foutna l git'
+              echo 'foutna l git jaw'
             }
          }
            stage('CLEAN') {
