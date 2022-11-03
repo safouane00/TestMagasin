@@ -21,7 +21,7 @@ services:
     networks:
       - projectdevops 
     restart: on-failure  
-   angular:
+  angular:
     image: wassim19/achatfront:1.0
     container_name: achatangular
     ports: 
