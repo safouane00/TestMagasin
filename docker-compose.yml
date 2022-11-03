@@ -1,21 +1,28 @@
 version: '3'
-
 services:
-  mysqldb:
-    container_name: mysqldb
-    image: mysql:8
-    restart: unless-stopped
+  database:
+    image: mysql
+    container_name: mysql
     environment:
-     - MYSQL_ROOT_PASSWORD=root
-    volumes: 
-     - /home/mysql/data:/var/lib/mysql
-
-  pring_app:
-    image: achatproject
-    container_name: achatproject
-    restart: on-failure
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_DATABASE: achatdb   
     ports:
-     - 8095:8095
+      - 3306:3306
+    networks:
+     - projectdevops
+     
+  spring-boot:
+    image: achatProject/image:1.0
+    container_name: springcontainer
+    ports:
+      - 8095:8095
     depends_on:
-     - mysqldb
+      - database
+    networks:
+      - projectdevops 
+    restart: on-failure     
+ 
+  
+networks:
+  projectdevops:
      
