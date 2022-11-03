@@ -19,7 +19,7 @@ tools
     stages {
          stage('GIT') {
             steps {
-               echo 'bdina l git'
+               echo 'bdina git'
       //  sh " git url: 'https://github.com/ihebm123/GestionMagasinSpring.git' " 
               git branch:'main',url: 'https://github.com/ihebm123/TestMagasin.git'
 
